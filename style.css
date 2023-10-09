@@ -1,0 +1,101 @@
+*{
+    text-decoration: none;
+    outline: none;
+    border:none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: #e4e9fd;
+    color:white;
+}
+header{
+    width:100%;
+    padding:10px;
+    text-align: center;
+    background-color: #a683e3;
+}
+.link{
+    margin-right:50px;
+    text-decoration: none;
+    color:white;
+    font-size: 15px;
+}
+header a:active{
+    color:red;
+}
+.menu-item{
+    background-color: #a683e3;
+    text-align: center;
+    max-width:400px;
+    margin:50px auto;
+    font-size: 2rem;
+    border-radius: 5px;
+}
+.box {
+    max-width: 400px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+    display: block;
+}
+form{
+    display: flex;
+    justify-content: center;
+}
+input[type="text"]{
+    font-size: 20px;
+    text-align: center;
+    padding:2px;
+}
+.item button{
+    background-color: #a683e3;
+    border-radius: 50%;
+    width:50px;
+    min-height: 50px;
+    color:white;
+    font-size: 30px;
+    border-width: 0;
+    padding:2px;
+}
+.box p{
+    color:black;
+}
+.item{
+    min-height:70px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f1f1f1;
+}
+.items{
+    min-height:70px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f1f1f1;
+}
+input[type="checkbox"]{
+    margin-left:20px;
+}
+.item p{
+    padding:20px;
+    margin:0;
+    font-size: 20px;
+}
+input:checked + p {
+    text-decoration: line-through;
+    text-decoration-color: #a683e3;
+}
+.box div{
+    background-color: white;
+}
+.items p{
+  margin:15px 20px 15px 20px;
+  flex-grow:1; 
+}
+.items button{
+    margin-right: 20px;
+    background-color: white;
+}

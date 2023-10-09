@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ToDo App</h1>
+    </header>
+    <div class="menu-item">
+        <p><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-journal-check" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M10.854 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 8.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+            <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+            <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+          </svg>
+        <%= title %></p>
+    </div>
+    <% if(locals.item){ %>
+        <form class="box" action="/delete" method="post">
+        <% item.forEach(function(i){ %>
+            <div class="items">
+                <input type="checkbox">
+                <p><%= i.name %></p>
+                <button type="submit" name="delete" value="<%= i._id%>">x</button>
+            </div>
+            <% })%>
+        </form>
+        <div class="box">
+        <form class="item" action="/" method="post">
+            <input type="text" placeholder="New Item" name="newItem">
+            <button type="submit" name="list" value="<%= title%>">+</button>
+        </form>
+    </div>
+    <% }else{ %>
+        <div class="box">
+            <form class="item" action="/" method="post">
+                <input type="text" placeholder="New Item" name="newItem">
+                <input type="submit" value="+" name="list">
+            </form>
+        </div>
+    <% } %>
+</body>
+</html>
